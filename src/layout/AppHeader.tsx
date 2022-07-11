@@ -29,7 +29,12 @@ export const AppHeader = () => {
           Apply
         </Button>
       </div>
-      <div className={styles.headerMobileContainer}>
+      <div
+        className={clsx(
+          styles.headerMobileContainer,
+          isOpen && styles.headerMobilePadding
+        )}
+      >
         <div className={styles.headerMobile}>
           <IconLogo />
           <button

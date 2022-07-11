@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Section } from "../src/components/Section/Section";
 import { AppHeader } from "../src/layout/AppHeader";
+import { SectionHome } from "../src/layout/SectionHome";
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
       </Head>
       <Section bg={"#F7F3F4"}>
         <AppHeader />
+        <SectionHome />
       </Section>
     </div>
   );
