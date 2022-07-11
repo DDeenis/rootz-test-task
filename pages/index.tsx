@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Section } from "../src/components/Section/Section";
 import { AppHeader } from "../src/layout/AppHeader";
 
 const Home: NextPage = () => {
@@ -8,7 +9,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Rootz</title>
       </Head>
-      <AppHeader />
+      <Section bg={"#F7F3F4"}>
+        <AppHeader />
+      </Section>
     </div>
   );
 };

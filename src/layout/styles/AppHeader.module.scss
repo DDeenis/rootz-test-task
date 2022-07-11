@@ -1,8 +1,19 @@
-.header {
+@use "styles/media.scss";
+
+.headerDesktop {
   display: flex;
   justify-content: space-between;
   padding-block: 2rem;
   border-bottom: 4px solid #000;
+  padding-bottom: 96px;
+}
+
+.headerFull {
+  height: 100vh;
+}
+
+.headerMobileContainer {
+  display: none;
 }
 
 .navPrimary {
@@ -15,6 +26,15 @@
   margin-right: 100px;
 }
 
+.navPrimaryMobile {
+  display: none;
+  height: 100%;
+}
+
+.navPrimaryMobile > *:not(:last-child) {
+  margin-bottom: 56px;
+}
+
 .navItem {
   font-size: 1rem;
   color: #000;
@@ -22,4 +42,40 @@
 
 .navItem_active {
   font-weight: 700;
+}
+
+@include media.phone {
+  .headerDesktop {
+    display: none;
+  }
+
+  .headerBtnMobile {
+    display: block;
+  }
+
+  .navPrimaryMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navItem {
+    font-size: 1.75rem;
+  }
+
+  .headerMobileContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 72px;
+  }
+
+  .headerMobile {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 2rem;
+    border-bottom: 3px solid #000;
+  }
 }
