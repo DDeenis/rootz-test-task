@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 2rem;
+  border-bottom: 4px solid #000;
+}
+
+.navPrimary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navPrimary > *:not(:last-child) {
+  margin-right: 100px;
+}
+
+.navItem {
+  font-size: 1rem;
+  color: #000;
+}
+
+.navItem_active {
+  font-weight: 700;
+}

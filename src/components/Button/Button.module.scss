@@ -1,0 +1,27 @@
+.btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.btn:hover {
+  filter: brightness(80%);
+}
+
+.btn_primary {
+  background-color: #f2726c;
+  color: #fff;
+}
+
+.btn_secondary {
+  background-color: #fff;
+  color: #000;
+}
+
+.btnText {
+  font-weight: 700;
+  font-size: 0.8125rem;
+}

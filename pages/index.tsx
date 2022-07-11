@@ -1,14 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import { AppHeader } from "../src/layout/AppHeader";
 
 const Home: NextPage = () => {
   return (
     <div>
       <Head>
         <title>Rootz</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
+      <AppHeader />
     </div>
   );
 };
