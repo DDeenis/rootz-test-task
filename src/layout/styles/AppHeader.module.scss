@@ -43,7 +43,7 @@
   font-weight: 700;
 }
 
-@include media.phone {
+@include media.tablet {
   .headerDesktop {
     display: none;
   }

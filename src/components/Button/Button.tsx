@@ -6,6 +6,7 @@ type Props = React.PropsWithChildren<{
   variant?: "primary" | "secondary";
   maxW?: number;
   className?: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }>;
 
 export const Button = ({
@@ -13,6 +14,7 @@ export const Button = ({
   variant = "primary",
   maxW,
   className,
+  onClick,
 }: Props) => {
   return (
     <button
@@ -23,6 +25,7 @@ export const Button = ({
       style={{
         maxWidth: maxW ? `${maxW}px` : "100%",
       }}
+      onClick={onClick}
     >
       <span className={styles.btnText}>{children}</span>
     </button>

@@ -1,0 +1,100 @@
+@use "styles/media.scss";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 70px 96px;
+  padding-inline: 80px 30px;
+}
+
+.contentContainer {
+  padding-top: 58px;
+}
+
+.content {
+  max-width: 450px;
+}
+
+.contentText {
+  font-size: 1rem;
+  margin-block: clamp(30px, 5vw, 60px) clamp(40px, 4vw, 50px);
+}
+
+.aside {
+  max-width: 510px;
+  position: relative;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card {
+  position: absolute;
+  height: max-content;
+  left: -53px;
+  bottom: -54px;
+}
+
+.cardContent {
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardContentTextContainer {
+  font-weight: 700;
+  color: #fff;
+
+  :first-child {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  :last-child {
+    font-size: 3.5rem;
+  }
+}
+
+@include media.tablet {
+  .container {
+    padding-inline: 0;
+    flex-direction: column;
+  }
+
+  .contentContainer {
+    padding-top: 0;
+  }
+
+  .aside {
+    position: relative;
+    right: -200px;
+    margin-top: 62px;
+  }
+
+  .card {
+    width: 216px;
+    height: 262px;
+    left: -200px;
+    bottom: 92px;
+  }
+
+  .cardContent {
+    & > :first-child {
+      width: 32px;
+      height: 38px;
+    }
+  }
+
+  .cardContentTextContainer {
+    :first-child {
+      font-size: 0.9375rem;
+    }
+
+    :last-child {
+      font-size: 2.5rem;
+    }
+  }
+}

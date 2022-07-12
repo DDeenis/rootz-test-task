@@ -5,10 +5,13 @@
   background-color: #fff;
   border-radius: 40px;
   width: 100%;
-  max-height: 48px;
 
   & > *:not(:last-child) {
     margin-right: 13px;
+  }
+
+  & > :last-child:not(input) {
+    margin-right: -13px;
   }
 }
 
@@ -23,4 +26,12 @@
   &::placeholder {
     color: #807c7c;
   }
+}
+
+.sizeMd {
+  max-height: 48px;
+}
+
+.sizeLg {
+  max-height: 64px;
 }

@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React from "react";
 import styles from "./Input.module.scss";
 
@@ -11,11 +12,22 @@ type Props = {
   inputMode?: ElementProps<HTMLInputElement>["inputMode"];
   rightElement?: JSX.Element;
   leftElement?: JSX.Element;
+  size?: "md" | "lg";
 };
 
-export const Input = ({ rightElement, leftElement, ...props }: Props) => {
+export const Input = ({
+  rightElement,
+  leftElement,
+  size = "md",
+  ...props
+}: Props) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={clsx(styles.container, {
+        [styles.sizeMd]: size === "md",
+        [styles.sizeLg]: size === "lg",
+      })}
+    >
       {rightElement}
       <input {...props} className={styles.input} />
       {leftElement}
