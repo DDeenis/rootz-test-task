@@ -33,13 +33,6 @@ export const HomeSection = () => {
         </div>
       </div>
       <aside className={styles.aside}>
-        {/* <Image
-          src={parrot.src}
-          alt="Parrot"
-          width={parrot.width}
-          height={parrot.height}
-          layout={"fixed"}
-        /> */}
         <img src={parrot.src} alt="Parrot" className={styles.asideImg} />
         <div className={styles.card}>
           <Image
