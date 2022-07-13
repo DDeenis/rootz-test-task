@@ -1,5 +1,15 @@
+@use "styles/media.scss";
+
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 64px;
+}
+
+@include media.tablet {
+  .container {
+    flex-direction: column;
+    gap: 50px;
+  }
 }

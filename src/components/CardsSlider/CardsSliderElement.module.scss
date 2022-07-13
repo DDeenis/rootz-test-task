@@ -1,0 +1,85 @@
+@use "styles/media.scss";
+
+.container {
+  max-width: 990px;
+  min-height: 515px;
+  border-radius: 20px;
+  padding: 80px 112px 0 80px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.content {
+  max-width: 385px;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #222433;
+  margin-bottom: 42px;
+}
+
+.descr {
+  font-weight: 400;
+  font-size: 18px;
+  color: #1e1a20;
+  //   mix-blend-mode: normal;
+  //   opacity: 0.9;
+  margin: 0;
+}
+
+.graphics {
+  align-self: flexlend;
+  justify-self: flex-end;
+  position: relative;
+  bottom: 0;
+}
+
+.rect {
+  width: 272px;
+  height: 432px;
+  background: #f7f3f4;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.rectSecondary {
+  position: absolute;
+  width: 252px;
+  height: 368px;
+  left: 48px;
+  bottom: 0;
+  border-top-right-radius: 20px;
+  background: #f7f3f4;
+  opacity: 0.5;
+}
+
+@include media.tablet {
+  .container {
+    padding: 0;
+    flex-direction: column;
+    max-height: 600px;
+    max-width: 375px;
+  }
+
+  .content {
+    padding: 40px;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .descr {
+    font-size: 0.9375rem;
+  }
+
+  .graphics {
+    margin-inline: 23px;
+  }
+}

@@ -18,8 +18,6 @@ export const NewsElement = ({
   url,
   isVideo = false,
 }: Props) => {
-  console.log(tag, isVideo);
-
   return (
     <div className={styles.container}>
       {isVideo ? (
@@ -49,7 +47,14 @@ export const NewsElement = ({
 const VideoImage = ({ img, alt }: { img: string; alt: string }) => {
   return (
     <div className={styles.videoImgContainer}>
-      <Image src={img} alt={alt} width={160} height={112} objectFit={"cover"} />
+      <Image
+        src={img}
+        alt={alt}
+        width={160}
+        height={112}
+        objectFit={"cover"}
+        className={styles.imgVideo}
+      />
       <IconPlay />
     </div>
   );
