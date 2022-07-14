@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { IconPlay } from "../Icons/IconPlay";
 import styles from "./NewsElement.module.scss";
 
 type Props = {
-  img: string;
+  img: StaticImageData;
   title: string;
   tag: string;
   url: string;
@@ -24,13 +24,12 @@ export const NewsElement = ({
         <VideoImage img={img} alt={title} />
       ) : (
         <Image
-          src={img}
+          {...img}
           alt={title}
-          width={112}
-          height={112}
           className={styles.img}
           objectFit={"cover"}
           layout={"fixed"}
+          placeholder={"blur"}
         />
       )}
       <div className={styles.content}>
@@ -44,16 +43,15 @@ export const NewsElement = ({
   );
 };
 
-const VideoImage = ({ img, alt }: { img: string; alt: string }) => {
+const VideoImage = ({ img, alt }: { img: StaticImageData; alt: string }) => {
   return (
     <div className={styles.videoImgContainer}>
       <Image
-        src={img}
+        {...img}
         alt={alt}
-        width={160}
-        height={112}
         objectFit={"cover"}
         className={styles.imgVideo}
+        placeholder={"blur"}
       />
       <IconPlay />
     </div>

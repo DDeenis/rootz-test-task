@@ -9,20 +9,20 @@ export const News = () => {
   return (
     <div className={styles.container}>
       <NewsElement
-        img={img1.src}
+        img={img1}
         title={"Travel In Japan: The True Experience"}
         tag={"Stories"}
         url={"example.com"}
       />
       <NewsElement
-        img={img2.src}
+        img={img2}
         title={"Helping Wild Turtles"}
         tag={"VideoTutor"}
         url={"example.com"}
         isVideo
       />
       <NewsElement
-        img={img3.src}
+        img={img3}
         title={"Threats of Indusrial World"}
         tag={"Photostory"}
         url={"example.com"}

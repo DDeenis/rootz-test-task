@@ -1,4 +1,5 @@
 import React from "react";
+import { CallToLogin } from "../components/CallToLogin/CallToLogin";
 import { CardsSlider } from "../components/CardsSlider/CardsSlider";
 import { News } from "../components/News/News";
 import { Quote } from "../components/Quote/Quote";
@@ -19,6 +20,9 @@ export const MainSection = () => {
       <Section>
         <Quote />
       </Section>
+      {/* <Section doublePadding> */}
+      <CallToLogin />
+      {/* </Section> */}
     </main>
   );
 };

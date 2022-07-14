@@ -11,6 +11,7 @@ export const useMediaQuery = (maxWidth: number, unit: CSSUnit = "px") => {
       setIsMatch(result.matches);
     };
 
+    matchQuery();
     window.addEventListener("resize", matchQuery);
 
     return () => window.removeEventListener("resize", matchQuery);
