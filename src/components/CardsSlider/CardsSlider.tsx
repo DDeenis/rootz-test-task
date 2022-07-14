@@ -7,7 +7,7 @@ import styles from "./CardsSlider.module.scss";
 
 export const CardsSlider = () => {
   const settings: Settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,

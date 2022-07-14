@@ -1,0 +1,11 @@
+@use "styles/media.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 192px;
+
+  @include media.tablet {
+    gap: 100px;
+  }
+}

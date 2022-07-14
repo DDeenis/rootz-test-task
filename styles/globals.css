@@ -21,15 +21,3 @@ button {
   border: none;
   background-color: transparent;
 }
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 192px;
-}
-
-@media (max-width: 48em) {
-  main {
-    gap: 100px;
-  }
-}

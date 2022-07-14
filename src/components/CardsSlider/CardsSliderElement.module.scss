@@ -2,7 +2,7 @@
 
 .container {
   max-width: 990px;
-  min-height: 515px;
+  height: 515px;
   border-radius: 20px;
   padding: 80px 112px 0 80px;
   display: flex;
@@ -26,13 +26,11 @@
   font-weight: 400;
   font-size: 18px;
   color: #1e1a20;
-  //   mix-blend-mode: normal;
-  //   opacity: 0.9;
   margin: 0;
 }
 
 .graphics {
-  align-self: flexlend;
+  align-self: flex-end;
   justify-self: flex-end;
   position: relative;
   bottom: 0;
@@ -57,11 +55,11 @@
   opacity: 0.5;
 }
 
-@include media.tablet {
+@include media.phone {
   .container {
     padding: 0;
     flex-direction: column;
-    max-height: 600px;
+    min-height: 600px;
     max-width: 375px;
   }
 
@@ -81,5 +79,6 @@
 
   .graphics {
     margin-inline: 23px;
+    align-self: initial;
   }
 }

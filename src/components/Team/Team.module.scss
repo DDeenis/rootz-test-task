@@ -1,0 +1,40 @@
+@use "styles/media.scss";
+
+.container {
+  width: max-content;
+  margin-inline: auto;
+}
+
+.textContainer {
+  text-align: center;
+  max-width: 350px;
+  margin-inline: auto;
+  margin-bottom: 13px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #222433;
+  margin: 0;
+}
+
+.descr {
+  font-size: 1.125rem;
+  color: #1e1a20;
+  margin: 0;
+}
+
+@include media.tablet {
+  .textContainer {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .descr {
+    font-size: 0.9375rem;
+  }
+}
