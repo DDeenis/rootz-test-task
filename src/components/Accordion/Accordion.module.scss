@@ -1,0 +1,79 @@
+@use "styles/media.scss";
+
+.container {
+  --gap-size: 35px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-size);
+}
+
+.elementContainer {
+  width: 100%;
+  padding-bottom: var(--gap-size);
+  border-bottom: 1px solid #1e1a20;
+}
+
+.elementControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.elementTitle {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #1e1a20;
+}
+
+.elementText {
+  font-size: 1rem;
+  color: #1e1a20;
+  margin-top: 16px;
+}
+
+.elementBtn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f2726c;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+  }
+}
+
+.elementBtn.elementBtnPlus::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 14px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+}
+
+@include media.tablet {
+  .container {
+    --gap-size: 24px;
+  }
+
+  .elementTitle {
+    font-size: 1.125rem;
+    max-width: 250px;
+  }
+
+  .elementText {
+    font-size: 0.9375rem;
+  }
+}

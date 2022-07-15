@@ -1,6 +1,7 @@
 import React from "react";
 import { CallToLogin } from "../components/CallToLogin/CallToLogin";
 import { CardsSlider } from "../components/CardsSlider/CardsSlider";
+import { FAQ } from "../components/FAQ/FAQ";
 import { News } from "../components/News/News";
 import { Quote } from "../components/Quote/Quote";
 import { Section } from "../components/Section/Section";
@@ -20,9 +21,10 @@ export const MainSection = () => {
       <Section>
         <Quote />
       </Section>
-      {/* <Section doublePadding> */}
       <CallToLogin />
-      {/* </Section> */}
+      <Section doublePadding>
+        <FAQ />
+      </Section>
     </main>
   );
 };
