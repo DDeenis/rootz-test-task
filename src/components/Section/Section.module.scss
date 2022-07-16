@@ -1,18 +1,24 @@
 @use "styles/media.scss";
 
 .section {
-  --default-padding: 5rem;
-  padding-inline: var(--default-padding);
   width: 100vw;
 }
 
-.section.doublePadding {
-  padding-inline: calc(var(--default-padding) * 2);
+.content {
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+.content.contentLg {
+  max-width: 1280px;
 }
 
 @include media.phone {
-  .section,
-  .section.doublePadding {
+  .section {
     padding-inline: 1rem;
+  }
+
+  .section.noPadding {
+    padding: 0;
   }
 }

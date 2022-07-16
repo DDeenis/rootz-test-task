@@ -1,0 +1,98 @@
+@use "styles/media.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-block: clamp(40px, 7vw, 90px);
+  justify-content: start;
+}
+
+.contacts {
+  justify-self: start;
+}
+
+.headquarters {
+  padding-top: 12px;
+  justify-self: center;
+  align-self: center;
+}
+
+.socialMedia {
+  padding-top: 12px;
+  justify-self: end;
+}
+
+.socialMediaIcons {
+  display: flex;
+  gap: 16px;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.titleBig {
+  font-weight: 700;
+  font-size: 2.125rem;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #333333;
+}
+
+.text {
+  font-size: 0.8125rem;
+  color: #333333;
+  margin: 0;
+}
+
+@include media.tablet {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 40px;
+  }
+
+  .contacts {
+    grid-column: span 2;
+
+    & br {
+      display: none;
+    }
+  }
+
+  .headquarters {
+    padding-top: 0;
+    justify-self: start;
+    align-self: start;
+  }
+
+  .socialMedia {
+    padding-top: 0;
+    justify-self: start;
+    align-self: start;
+  }
+
+  .contentContainer {
+    gap: 15px;
+  }
+
+  .titleBig {
+    font-size: 1.75rem;
+  }
+
+  .title {
+    font-size: 1.125rem;
+  }
+
+  .text {
+    // font-size: 0.75rem;
+  }
+}

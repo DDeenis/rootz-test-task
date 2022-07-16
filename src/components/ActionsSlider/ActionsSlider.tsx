@@ -27,11 +27,7 @@ export const ActionsSlider = () => {
 
   return (
     <div className={styles.container}>
-      <Slider
-        ref={sliderRef}
-        {...settings}
-        customPaging={(index) => <button>{index + 1}</button>}
-      >
+      <Slider ref={sliderRef} {...settings}>
         <ActionsSliderElement
           title="Save watter"
           text="Taking on the issue of ensuring access to safe water requires worldwide effort."

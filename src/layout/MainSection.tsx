@@ -12,18 +12,22 @@ import styles from "./styles/MainSection.module.scss";
 export const MainSection = () => {
   return (
     <main className={styles.main}>
-      <Section doublePadding>
+      <Section>
         <News />
       </Section>
-      <CardsSlider />
-      <Section doublePadding>
+      <Section noPadding>
+        <CardsSlider />
+      </Section>
+      <Section>
         <Team />
       </Section>
       <Section>
         <Quote />
       </Section>
-      <CallToLogin />
-      <Section doublePadding>
+      <Section noPadding>
+        <CallToLogin />
+      </Section>
+      <Section>
         <FAQ />
       </Section>
       <ActionsSlider />

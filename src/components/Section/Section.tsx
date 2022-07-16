@@ -4,18 +4,21 @@ import styles from "./Section.module.scss";
 
 type Props = React.PropsWithChildren<{
   bg?: string;
-  doublePadding?: boolean;
+  size?: "md" | "lg";
+  noPadding?: boolean;
 }>;
 
-export const Section = ({ children, bg, doublePadding }: Props) => {
+export const Section = ({ children, bg, size = "md", noPadding }: Props) => {
   return (
     <section
-      className={clsx(styles.section, doublePadding && styles.doublePadding)}
+      className={clsx(styles.section, noPadding && styles.noPadding)}
       style={{
         backgroundColor: bg ? bg : "#fff",
       }}
     >
-      {children}
+      <div className={clsx(styles.content, size === "lg" && styles.contentLg)}>
+        {children}
+      </div>
     </section>
   );
 };
