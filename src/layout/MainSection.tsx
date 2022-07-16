@@ -1,4 +1,5 @@
 import React from "react";
+import { ActionsSlider } from "../components/ActionsSlider/ActionsSlider";
 import { CallToLogin } from "../components/CallToLogin/CallToLogin";
 import { CardsSlider } from "../components/CardsSlider/CardsSlider";
 import { FAQ } from "../components/FAQ/FAQ";
@@ -25,6 +26,7 @@ export const MainSection = () => {
       <Section doublePadding>
         <FAQ />
       </Section>
+      <ActionsSlider />
     </main>
   );
 };

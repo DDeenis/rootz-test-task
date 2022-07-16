@@ -1,0 +1,60 @@
+.container {
+  position: relative;
+  width: max-content;
+  isolation: isolate;
+}
+
+.contentContainer {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titlePrimary {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.textContainer {
+  max-width: 270px;
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+
+.titleSecondary {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #1e1a20;
+}
+
+.text {
+  font-size: 0.9375rem;
+  color: #1e1a20;
+}
+
+.imageSecondary {
+  position: absolute;
+  top: 0;
+  left: 45px;
+  width: 150px;
+  height: 120px;
+  margin: 0;
+}
+
+.imageBgContainer {
+  width: 440px;
+  height: 380px;
+}
+
+.imageBg {
+  z-index: -1;
+}
