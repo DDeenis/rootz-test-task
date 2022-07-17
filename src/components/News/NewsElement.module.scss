@@ -35,18 +35,16 @@
   font-size: 0.75rem;
   text-decoration-line: underline;
   color: #807c7c;
-  // ???
-  vertical-align: bottom;
 }
 
 .videoImgContainer {
   position: relative;
   cursor: pointer;
+}
 
-  & > :last-child {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+.iconPlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

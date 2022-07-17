@@ -53,7 +53,9 @@ const VideoImage = ({ img, alt }: { img: StaticImageData; alt: string }) => {
         className={styles.imgVideo}
         placeholder={"blur"}
       />
-      <IconPlay />
+      <button className={styles.iconPlay}>
+        <IconPlay />
+      </button>
     </div>
   );
 };
