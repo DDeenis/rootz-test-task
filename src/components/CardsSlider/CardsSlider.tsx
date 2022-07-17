@@ -1,25 +1,25 @@
 import React from "react";
-import ReactSlick, { CustomArrowProps, Settings } from "react-slick";
-import { IconLeft } from "../Icons/IconLeft";
-import { IconRight } from "../Icons/IconRight";
 import { CardsSliderElement } from "./CardsSliderElement";
 import styles from "./CardsSlider.module.scss";
-import clsx from "clsx";
+import Carousel from "nuka-carousel";
+import { IconLeft } from "../Icons/IconLeft";
+import { IconRight } from "../Icons/IconRight";
+import { CarouselDots, CarouselIcon } from "./CardsSliderControls";
 
 export const CardsSlider = () => {
-  const settings: Settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: <CarouselIcon icon={<IconLeft />} />,
-    nextArrow: <CarouselIcon icon={<IconRight />} />,
-  };
-
   return (
     <div className={styles.container}>
-      <ReactSlick {...settings}>
+      <Carousel
+        renderCenterLeftControls={(props) => (
+          <CarouselIcon icon={<IconLeft />} direction="prev" {...props} />
+        )}
+        renderCenterRightControls={(props) => (
+          <CarouselIcon icon={<IconRight />} direction="next" {...props} />
+        )}
+        renderBottomCenterControls={(props) => <CarouselDots {...props} />}
+        dragThreshold={0.3}
+        wrapAround
+      >
         <CardsSliderElement
           title="Travel In Japan: The True Experience"
           descr="When pattern is mentioned in interior design, it is easy to asso- ciate it with a geometric patterned wallpaper or colourful prints on interior fabrics."
@@ -35,25 +35,7 @@ export const CardsSlider = () => {
           descr="The scale of the challenges facing our planet can seem daunting, but we can all do something. Easy to asso- ciate it with a geometric patterned wallpaper."
           bg="#CBCBFF"
         />
-      </ReactSlick>
+      </Carousel>
     </div>
-  );
-};
-
-interface CarouselIconProps extends CustomArrowProps {
-  icon: JSX.Element;
-}
-
-const CarouselIcon = ({
-  icon,
-  slideCount,
-  currentSlide,
-  className,
-  ...props
-}: CarouselIconProps) => {
-  return (
-    <button {...props} className={clsx(styles.customArrowBtn, className)}>
-      {icon}
-    </button>
   );
 };

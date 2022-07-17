@@ -1,0 +1,41 @@
+@use "styles/media.scss";
+
+.customArrowBtn {
+  width: 24px;
+  height: 44px;
+  cursor: pointer;
+  position: relative;
+}
+
+.iconPrev {
+  left: -64px;
+}
+
+.iconNext {
+  right: -64px;
+}
+
+.dotsContainer {
+  display: none;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dotActive {
+  background-color: #000;
+}
+
+@include media.tablet {
+  .dotsContainer {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    top: 30px;
+  }
+}

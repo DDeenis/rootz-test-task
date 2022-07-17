@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import styles from "./ActionsSlider.module.scss";
 import { ActionsSliderElement } from "./ActionsSliderElement";
 import img1 from "../../../public/sliderAction1.png";
@@ -12,13 +12,12 @@ import { IconLeft } from "../Icons/IconLeft";
 import { IconRight } from "../Icons/IconRight";
 
 export const ActionsSlider = () => {
-  const sliderRef = useRef<Carousel>(null);
   const isTablet = useMediaQuery(48, "em");
 
   return (
     <div className={styles.container}>
       <Carousel
-        // renderTopCenterControls={null}
+        renderTopCenterControls={null}
         renderBottomCenterControls={({
           previousSlide,
           nextSlide,
@@ -47,7 +46,6 @@ export const ActionsSlider = () => {
         wrapAround
         slidesToShow={isTablet ? 1 : 4.3}
         dragThreshold={isTablet ? 0.1 : 0.5}
-        ref={sliderRef}
       >
         <ActionsSliderElement
           title="Save watter"
