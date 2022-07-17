@@ -1,9 +1,10 @@
 import React from "react";
-import ReactSlick, { Settings } from "react-slick";
+import ReactSlick, { CustomArrowProps, Settings } from "react-slick";
 import { IconLeft } from "../Icons/IconLeft";
 import { IconRight } from "../Icons/IconRight";
 import { CardsSliderElement } from "./CardsSliderElement";
 import styles from "./CardsSlider.module.scss";
+import clsx from "clsx";
 
 export const CardsSlider = () => {
   const settings: Settings = {
@@ -12,8 +13,8 @@ export const CardsSlider = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: <IconLeft />,
-    nextArrow: <IconRight />,
+    prevArrow: <CarouselIcon icon={<IconLeft />} />,
+    nextArrow: <CarouselIcon icon={<IconRight />} />,
   };
 
   return (
@@ -36,5 +37,23 @@ export const CardsSlider = () => {
         />
       </ReactSlick>
     </div>
+  );
+};
+
+interface CarouselIconProps extends CustomArrowProps {
+  icon: JSX.Element;
+}
+
+const CarouselIcon = ({
+  icon,
+  slideCount,
+  currentSlide,
+  className,
+  ...props
+}: CarouselIconProps) => {
+  return (
+    <button {...props} className={clsx(styles.customArrowBtn, className)}>
+      {icon}
+    </button>
   );
 };

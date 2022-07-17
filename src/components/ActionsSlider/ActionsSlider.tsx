@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import Slider, { Settings } from "react-slick";
 import styles from "./ActionsSlider.module.scss";
 import { ActionsSliderElement } from "./ActionsSliderElement";
 import img1 from "../../../public/sliderAction1.png";
@@ -7,27 +6,49 @@ import img2 from "../../../public/sliderAction2.png";
 import img3 from "../../../public/sliderAction3.png";
 import img4 from "../../../public/sliderAction4.png";
 import imgMain from "../../../public/sliderActionMain.png";
+import { useMediaQuery } from "../../hooks/media";
+import Carousel from "nuka-carousel";
+import { IconLeft } from "../Icons/IconLeft";
+import { IconRight } from "../Icons/IconRight";
 
 export const ActionsSlider = () => {
-  const sliderRef = useRef<Slider>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const settings: Settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    afterChange(currentSlide) {
-      setCurrentIndex(currentSlide);
-    },
-  };
+  const sliderRef = useRef<Carousel>(null);
+  const isTablet = useMediaQuery(48, "em");
 
   return (
     <div className={styles.container}>
-      <Slider ref={sliderRef} {...settings}>
+      <Carousel
+        // renderTopCenterControls={null}
+        renderBottomCenterControls={({
+          previousSlide,
+          nextSlide,
+          currentSlide,
+          slideCount,
+        }) => (
+          <div className={styles.carouselControls}>
+            <button
+              className={styles.carouselControlsBtn}
+              onClick={previousSlide}
+            >
+              <IconLeft />
+            </button>
+            <span className={styles.carouselControlsText}>
+              {currentSlide + 1}/{slideCount}
+            </span>
+            <button className={styles.carouselControlsBtn} onClick={nextSlide}>
+              <IconRight />
+            </button>
+          </div>
+        )}
+        renderCenterLeftControls={null}
+        renderCenterRightControls={null}
+        cellAlign="center"
+        animation="zoom"
+        wrapAround
+        slidesToShow={isTablet ? 1 : 4.3}
+        dragThreshold={isTablet ? 0.1 : 0.5}
+        ref={sliderRef}
+      >
         <ActionsSliderElement
           title="Save watter"
           text="Taking on the issue of ensuring access to safe water requires worldwide effort."
@@ -35,14 +56,10 @@ export const ActionsSlider = () => {
           alt="Sea"
           variant="secondary"
         />
-        <ActionsSliderElement
-          title="Plant trees"
-          image={{ src: img3.src, width: 280, height: 245 }}
-          alt="Forest"
-        />
+        <ActionsSliderElement title="Plant trees" image={img3} alt="Forest" />
         <ActionsSliderElement
           title="Save energy"
-          image={{ src: img4.src, width: 230, height: 200 }}
+          image={{ src: img4.src, width: 210, height: 210 }}
           alt="Windmills"
         />
         <ActionsSliderElement
@@ -52,10 +69,10 @@ export const ActionsSlider = () => {
         />
         <ActionsSliderElement
           title="Choose organic"
-          image={{ src: img2.src, width: 280, height: 280 }}
+          image={img2}
           alt="Water with plants"
         />
-      </Slider>
+      </Carousel>
     </div>
   );
 };

@@ -3,3 +3,32 @@
   padding-block: 104px;
   background-color: #ffbd9e;
 }
+
+.carouselControls {
+  position: relative;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.carouselControlsBtn {
+  cursor: pointer;
+
+  & svg {
+    width: 8px;
+    height: 15px;
+  }
+}
+
+.carouselControlsText {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.2);
+  letter-spacing: 5px;
+
+  &::first-letter {
+    color: #000;
+  }
+}

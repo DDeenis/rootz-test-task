@@ -1,12 +1,8 @@
 import React from "react";
-import { CustomArrowProps } from "react-slick";
 
-export const IconLeft: React.FC<
-  Partial<HTMLOrSVGElement> & CustomArrowProps
-> = ({ currentSlide, slideCount, ...props }) => {
+export const IconLeft = () => {
   return (
     <svg
-      {...props}
       width="24"
       height="44"
       viewBox="0 0 24 44"
