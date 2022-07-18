@@ -4,12 +4,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 64px;
 }
 
 @include media.tablet {
   .container {
-    flex-direction: column;
+    // flex-direction: column;
+    justify-content: center;
     gap: 50px;
   }
 }

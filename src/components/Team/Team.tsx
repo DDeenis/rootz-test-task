@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useMediaQuery } from "../../hooks/media";
 
 export const Team = () => {
-  const isPhone = useMediaQuery(48, "em");
+  const isTablet = useMediaQuery(56, "em");
 
   return (
     <div className={styles.container}>
@@ -16,7 +16,7 @@ export const Team = () => {
           Learn more about how you can save our planet&apos;s nature.
         </p>
       </div>
-      {!isPhone ? (
+      {!isTablet ? (
         <Image
           src={teamDesktop.src}
           alt={"Three photos of team members"}

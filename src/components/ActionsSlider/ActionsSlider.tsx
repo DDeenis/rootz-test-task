@@ -12,7 +12,7 @@ import { IconLeft } from "../Icons/IconLeft";
 import { IconRight } from "../Icons/IconRight";
 
 export const ActionsSlider = () => {
-  const isTablet = useMediaQuery(48, "em");
+  const isTablet = useMediaQuery(56, "em");
 
   return (
     <div className={styles.container}>
@@ -44,7 +44,7 @@ export const ActionsSlider = () => {
         cellAlign="center"
         animation="zoom"
         wrapAround
-        slidesToShow={isTablet ? 1 : 4.3}
+        slidesToShow={isTablet ? 1 : 3.5}
         dragThreshold={isTablet ? 0.1 : 0.5}
       >
         <ActionsSliderElement
